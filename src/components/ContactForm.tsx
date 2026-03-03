@@ -26,17 +26,16 @@ const ContactForm = () => {
 
     try {
       await emailjs.send(
-        'service_h964ypv',
-        'template_38xo4ti',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_name: 'Saurabh Singh',
-        },
-        'pVXG7mwYT69Lnkhjx'
-      );
-
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  {
+    from_name: formData.name,
+    from_email: formData.email,
+    message: formData.message,
+    to_name: 'Saurabh Singh',
+  },
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+);
       toast({
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
